@@ -22,10 +22,12 @@ int get_min(uint8_t w, uint8_t x, uint8_t y, uint8_t z);
 void curr_cell_update(uint8_t Nrow, uint8_t Ncol);
 void update_cells(uint8_t Nrow, uint8_t Ncol);
 void update_cells_explore(uint8_t Nrow, uint8_t Ncol);
-void move_to_floodfill();
+void possible_moves_to_floodfill();  //outputs the array movdir which shows the possible directions of motion
+void get_wall_data(); //updates N,E,S,W of the current cell
 
 //testing
 void add_wall_data_from_file();
 void transpose();
 void update_every_cell();
 void update_every_cell_start();
+char face_to_print(uint8_t f);

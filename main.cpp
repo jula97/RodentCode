@@ -4,6 +4,7 @@
 #include "Algorithm/floodfill.h" 
 #include "Algorithm/maze.h"
 #include "Algorithm/stack.h"
+#include "Algorithm/explore.h"
 #include "Algorithm/testing_functions.h"
 
 
@@ -19,13 +20,11 @@ int main()
     cout << "                  --------------------------" << endl;
 
     generate_maze_to_center();
-    add_wall_data_from_file();  
-    update_every_cell_center();
     print_maze();
-    generate_maze_to_cell(0,0);
-    print_maze();
-    
+    transpose();
+    floodfill();
 
+    
 
     cin >> v;
 

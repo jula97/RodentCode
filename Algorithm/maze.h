@@ -3,7 +3,7 @@ using namespace std;
 void floodfill_setup(){  //updating walls of edges and corners 
     for (int n = 0; n < size; n++){
     for (int m = 0; m < size; m++){
-        maze[n][m]=((maze[n][m]&0x00FF)|maze[n][m]<<8);    // 0000 0000 0000 1111 --> 0000 1111 0000 0000
+        maze[n][m]=(maze[n][m]<<8);    // 0000 0000 0000 1111 --> 0000 1111 0000 0000
     }
     }
     E=0; W=0;
@@ -68,19 +68,34 @@ void print_maze(){
                     if (tempN==1){cout << "---+";}
                     else{cout << "   +";}
                 }
-                if (i==1){
-                    if(tempE==1){
-                        if (distance<10){cout << " "<< distance << " " << "|";}
-                        else if (distance<100){cout << " " << distance << "|";}
-                        else{cout << distance << "|";}
-                    } 
-                    else{
-                        if (distance<10){cout << " "<< distance << " " << " ";}
-                        else if (distance<100){cout << " " << distance << " ";}
-                        else{cout << distance << " ";}
-                    }  
+                if ((R==row)&(C==column)){
+                    if (i==1){
+                        if(tempE==1){
+                            if (distance<10){cout << " "<< face_to_print(face) << " " << "|";}
+                            else if (distance<100){cout << " " << face_to_print(face) << " " << "|";}
+                            else{cout << face_to_print(face) << "|";}
+                        } 
+                        else{
+                            if (distance<10){cout << " "<< face_to_print(face) << " " << " ";}
+                            else if (distance<100){cout << " " << face_to_print(face) << " " << " ";}
+                            else{cout << face_to_print(face) << " ";}
+                        }  
+                    }
                 }
-                
+                else{
+                    if (i==1){
+                        if(tempE==1){
+                            if (distance<10){cout << " "<< distance << " " << "|";}
+                            else if (distance<100){cout << " " << distance << "|";}
+                            else{cout << distance << "|";}
+                        } 
+                        else{
+                            if (distance<10){cout << " "<< distance << " " << " ";}
+                            else if (distance<100){cout << " " << distance << " ";}
+                            else{cout << distance << " ";}
+                        }  
+                    }
+                }
             }    
         } 
     }
@@ -105,45 +120,4 @@ void generate_maze_to_center(){
     floodfill_setup();
 }
 
-void generate_maze_to_cell(uint8_t Nrow, uint8_t Ncol){
-    count = 0; q1=0;
-    for (int n=Nrow; n>-1; n--){  //for 1st quadrant
-    for (int m=Ncol; m>-1; m--){
-        maze[n][m]=((maze[n][m]&0x00FF)|q1<<8);
-        // maze[n][m]=q1;
-        q1++;
-    }
-    count++; q1=0; q1+=count;
-    }
-
-    count=0; q2=1;
-    for (int n=Nrow+1; n<size; n++){  //for 2nd quadrant
-    for (int m=Ncol; m>-1; m--){
-        maze[n][m]=((maze[n][m]&0x00FF)|q2<<8);
-        // maze[n][m]=q2;
-        q2++;
-    }
-    count++; q2=1; q2+=count;
-    }
-
-    count=0; q3=1;
-    for (int n=Nrow; n>-1; n--){  //for 3rd quadrant
-    for (int m=Ncol+1; m<size; m++){
-        maze[n][m]=((maze[n][m]&0x00FF)|q3<<8);
-        // maze[n][m]=q3;
-        q3++;
-    }
-    count++; q3=1; q3+=count;
-    }
-
-    count=0; q4=2;
-    for (int n=Nrow+1; n<size; n++){  //for 4th quadrant
-    for (int m=Ncol+1; m<size; m++){
-        maze[n][m]=((maze[n][m]&0x00FF)|q4<<8);
-        // maze[n][m]=q4;
-        q4++;
-    }
-    count++; q4=2; q4+=count;
-    }
-}
 

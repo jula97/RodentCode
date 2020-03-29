@@ -48,6 +48,9 @@ void update_every_cell_start(){   //to run modified floodfill while exploring
         }
     }
     }
-    
+}
+
+char face_to_print(uint8_t f){
+    return print_face[(int)f];
 }
 
