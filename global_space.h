@@ -26,6 +26,9 @@ uint16_t walls[size][size]
 bool updated;
 uint8_t currCell=0, Ncell=0, Ecell=0, Scell=0, Wcell=0, md_plus_one=0;
 
+uint8_t minCell=0;
+uint8_t movdir[4] {0,0,0,0}
+
 //stack 
 uint16_t stack[size*size];
 uint16_t stackval = 0;
