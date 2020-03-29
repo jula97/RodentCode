@@ -71,13 +71,13 @@ void print_maze(){
                 if ((R==row)&(C==column)){
                     if (i==1){
                         if(tempE==1){
-                            if (distance<10){cout << " "<< face_to_print(face) << " " << "|";}
-                            else if (distance<100){cout << " " << face_to_print(face) << " " << "|";}
+                            if (distance<10){cout << " " << distance << face_to_print(face) << "|";}
+                            else if (distance<100){cout << distance << face_to_print(face) << "|";}
                             else{cout << face_to_print(face) << "|";}
                         } 
                         else{
-                            if (distance<10){cout << " "<< face_to_print(face) << " " << " ";}
-                            else if (distance<100){cout << " " << face_to_print(face) << " " << " ";}
+                            if (distance<10){cout << " "<< distance << face_to_print(face) << " " ;}
+                            else if (distance<100){cout << distance << face_to_print(face) << " ";}
                             else{cout << face_to_print(face) << " ";}
                         }  
                     }
@@ -86,12 +86,12 @@ void print_maze(){
                     if (i==1){
                         if(tempE==1){
                             if (distance<10){cout << " "<< distance << " " << "|";}
-                            else if (distance<100){cout << " " << distance << "|";}
+                            else if (distance<100){cout << distance << " " << "|";}
                             else{cout << distance << "|";}
                         } 
                         else{
                             if (distance<10){cout << " "<< distance << " " << " ";}
-                            else if (distance<100){cout << " " << distance << " ";}
+                            else if (distance<100){cout << distance << " " << " ";}
                             else{cout << distance << " ";}
                         }  
                     }

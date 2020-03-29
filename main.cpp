@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include "global_space.h"
 #include "function_list.h"
 #include "Algorithm/floodfill.h" 
@@ -11,13 +12,16 @@
 
 int main()
 {
-    int v;
 
     cout << "                  --------------------------" << endl;
     cout << "\n";
     cout << "                          Rodent 2.0        " << endl;
     cout << "\n";
     cout << "                  --------------------------" << endl;
+    cout << "\n";
+    cout << "\n" << "Press any key to continue.........";
+    
+    getch();
 
     generate_maze_to_center();
     print_maze();
@@ -26,7 +30,7 @@ int main()
 
     
 
-    cin >> v;
 
+    getch();
     return 0;
 }  
