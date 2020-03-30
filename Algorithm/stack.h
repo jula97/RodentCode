@@ -137,14 +137,14 @@ void push_open_neighbours_explore(uint8_t Nrow, uint8_t Ncol){
     if (Nrow>0){
         read_distance_data(Nrow-1,Ncol);
         if (tempDistance==0){}
-        else if (tempW==0) {
+        else if (tempS==0) {
             stack_push(Nrow-1,Ncol);
         }
     } 
     if (Ncol>0){
         read_distance_data(Nrow,Ncol-1);
         if (tempDistance==0){}
-        else if (tempS==0) {
+        else if (tempW==0) {
             stack_push(Nrow,Ncol-1);
         }
     }

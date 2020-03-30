@@ -38,4 +38,26 @@ void generate_maze_to_cell(uint8_t Nrow, uint8_t Ncol){
     }
     count++; q4=2; q4+=count;
     }
+    R_explore=Nrow;
+    C_explore=Ncol;
+}
+
+void floodfill_explore(){
+    while(true){
+        get_wall_data();
+        update_wall_data(R,C);
+        update_cells_explore(R,C);
+
+        // print_maze();
+        // std::cout << "\n" << "Press any key to continue.........";
+        // getch();
+
+        possible_moves_to_floodfill();
+        move_mouse();
+        read_distance_data(R,C);
+        if(tempDistance==0){
+            break;
+        }
+    }
+
 }

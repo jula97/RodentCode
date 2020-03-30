@@ -203,10 +203,10 @@ void floodfill(){
         get_wall_data();
         update_wall_data(R,C);
         update_cells(R,C);
-        print_maze();
 
-        std::cout << "\n" << "Press any key to continue.........";
-        getch();
+        // print_maze();
+        // std::cout << "\n" << "Press any key to continue.........";
+        // getch();
 
         possible_moves_to_floodfill();
         move_mouse();
@@ -215,5 +215,4 @@ void floodfill(){
             break;
         }
     }
-
 }

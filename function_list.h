@@ -28,6 +28,8 @@ void get_wall_data(); //updates N,E,S,W of the current cell
 //testing
 void add_wall_data_from_file();
 void transpose();
-void update_every_cell();
+void update_every_cell_center();
 void update_every_cell_start();
 char face_to_print(uint8_t f);
+
+void floodfill_explore();
