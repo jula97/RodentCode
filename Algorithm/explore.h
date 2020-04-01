@@ -48,9 +48,10 @@ void floodfill_explore(){
         update_wall_data(R,C);
         update_cells_explore(R,C);
 
-        // print_maze();
-        // std::cout << "\n" << "Press any key to continue.........";
-        // getch();
+        std::cout << "\n" << "Press enter to continue.........";
+        print_maze();
+        cin.get();
+        cin.clear();
 
         possible_moves_to_floodfill();
         move_mouse();
@@ -60,4 +61,18 @@ void floodfill_explore(){
         }
     }
 
+}
+
+void update_cells_explore(uint8_t Nrow, uint8_t Ncol){
+    curr_cell_update(Nrow,Ncol);
+    push_neighbours_explore(Nrow,Ncol);
+    is_stack_empty();
+    while (stack_not_empty){
+        stack_pop();
+        curr_cell_update(poprow,popcol);
+        if (updated){
+            push_open_neighbours_explore(poprow,popcol);
+        }
+        is_stack_empty();
+    }
 }

@@ -36,7 +36,7 @@ uint8_t poprow =0, popcol=0;
 //testing
 uint16_t wall_data = 0;
 char print_face[5]={'^','>','v','<','\0'};
-uint8_t R_explore=0;  // denotes cell to be explored
-uint8_t C_explore=0;
+int R_explore=0;  // denotes cell to be explored
+int C_explore=0;
 
 #endif

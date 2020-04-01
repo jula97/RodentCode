@@ -39,18 +39,16 @@ void update_every_cell_center(){  //runs modified floodfill on every cell except
 }
 
 void update_every_cell_explore(){   //to run modified floodfill while exploring
-    for (R=0; R<size; R++){
-    for (C=0; C<size; C++){
-        if((R==R_explore)&(C==C_explore)){}
+    for (int m=0; m<size; m++){
+    for (int n=0; n<size; n++){
+        if((m==R_explore)&(n==C_explore)){}
         else{        
-        update_cells_explore(R,C);
+        update_cells_explore(m,n);
         // print_maze();
         }
     }
     }
 }
 
-char face_to_print(uint8_t f){
-    return print_face[(int)f];
-}
+
 

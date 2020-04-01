@@ -106,6 +106,10 @@ void print_maze(){
     cout << "\n";
 }
 
+char face_to_print(uint8_t f){
+    return print_face[(int)f];
+}
+
 void generate_maze_to_center(){
     int corner = ((size/2)-1)*2;
     for (int n = 0; n < size/2; n++){
